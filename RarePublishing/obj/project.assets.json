@@ -482,19 +482,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\maxjo\\.nuget\\packages\\": {}
+    "C:\\Users\\Baley\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\maxjo\\Desktop\\CsharpProjects\\RarePublishing\\RarePublishing\\RarePublishing.csproj",
+      "projectUniqueName": "C:\\Users\\Baley\\workspace\\csharp\\rare\\RarePublishing\\RarePublishing\\RarePublishing.csproj",
       "projectName": "RarePublishing",
-      "projectPath": "C:\\Users\\maxjo\\Desktop\\CsharpProjects\\RarePublishing\\RarePublishing\\RarePublishing.csproj",
-      "packagesPath": "C:\\Users\\maxjo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\maxjo\\Desktop\\CsharpProjects\\RarePublishing\\RarePublishing\\obj\\",
+      "projectPath": "C:\\Users\\Baley\\workspace\\csharp\\rare\\RarePublishing\\RarePublishing\\RarePublishing.csproj",
+      "packagesPath": "C:\\Users\\Baley\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Baley\\workspace\\csharp\\rare\\RarePublishing\\RarePublishing\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\maxjo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Baley\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

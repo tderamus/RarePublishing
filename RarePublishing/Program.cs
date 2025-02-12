@@ -24,8 +24,8 @@ List<Categories> categories = new List<Categories>
 
 List<Posts> posts = new List<Posts>
     {
-        new Posts { Id = 1, User_Id = 1, Category_Id = 1, Title = "The Future of AI", PublicationDate = new DateTime(2025, 2, 5), Content = "AI is evolving rapidly...", Approved = true },
-        new Posts { Id = 2, User_Id = 2, Category_Id = 2, Title = "Healthy Eating Tips", PublicationDate = new DateTime(2025, 2, 10), Content = "Eating healthy is essential...", Approved = true }
+        new Posts { Id = 1, User_Id = 2, Category_Id = 1, Title = "The Future of AI", PublicationDate = new DateTime(2025, 2, 5), Content = "AI is evolving rapidly...", Approved = true },
+        new Posts { Id = 2, User_Id = 1, Category_Id = 2, Title = "Healthy Eating Tips", PublicationDate = new DateTime(2025, 2, 10), Content = "Eating healthy is essential...", Approved = true }
     };
 
 List<Comments> comments = new List<Comments>
@@ -76,6 +76,90 @@ app.UseHttpsRedirection();
 
 
 //CALLS BEGIN AROUND HERE
+app.MapPost("/posts", (Posts post) =>
+{
+ post.Id = posts.Max(st => st.Id) + 1;
+ posts.Add(post);
+
+ return Results.Ok(post);
+});
+
+app.MapPut("/posts/{id}", (int id, Posts post) =>
+{
+Posts postToUpdate = posts.FirstOrDefault(st => st.Id == id);
+int postIndex = posts.IndexOf(postToUpdate);
+
+if (postToUpdate == null)
+    {
+        return Results.NotFound();
+    }
+    if (id != post.Id)
+    {
+        return Results.BadRequest();
+    }
+    posts[postIndex] = post;
+    return Results.Ok(postToUpdate);
+});
+
+app.MapPost("/comments", (Comments comment) =>
+{
+ comment.Id = comments.Max(st => st.Id) + 1;
+ comments.Add(comment);
+
+ return Results.Ok(comment);
+});
+
+app.MapGet("/posts/{id}", (int id) =>
+{
+    Posts post = posts.FirstOrDefault(p => p.User_Id == id);
+    if (post == null)
+    {
+        return Results.NotFound();
+    }
+
+    return Results.Ok(post);
+});
+
+app.MapGet("/posts", () =>
+{
+    return Results.Ok(posts);
+});
+
+app.MapPost("/tags", (Tags tag) =>
+{
+ tag.Id = tags.Max(st => st.Id) + 1;
+ tags.Add(tag);
+
+ return Results.Ok(tag);
+});
+
+app.MapPost("/categories", (Categories Category) =>
+{
+ Category.Id = categories.Max(st => st.Id) + 1;
+ categories.Add(Category);
+
+ return Results.Ok(Category);
+});
+
+app.MapPost("/users", (Users user) =>
+{
+ user.Id = users.Max(st => st.Id) + 1;
+ users.Add(user);
+
+ return Results.Ok(user);
+});
+
+app.MapDelete("/posts/{id}", (int id) =>
+{
+    Posts post = posts.FirstOrDefault(st => st.Id == id);
+
+    posts.Remove(post);
+
+    return Results.Ok(post);
+});
+
+
+
 
 
 app.Run();

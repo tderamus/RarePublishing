@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RarePublishing")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7834c328965135e6e9a50daf0767981418789fed")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+248f0c7d51a23b0c385719057de71cf0628131b6")]
 [assembly: System.Reflection.AssemblyProductAttribute("RarePublishing")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RarePublishing")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
